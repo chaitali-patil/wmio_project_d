@@ -11,7 +11,7 @@ This use-case will highlight a solution utilizing below
 3) for Webmethos IS (onpremise) - webMethods IS local service development and Azure DevOps to extract and store the code assets in repository (GitHub).
 By integrating repository workflows and azure pipelines, this process will automate the promotion of assets to different stages/environment as per the organizations promotion workflow. This will also showcase how to automate the test framework for respective stages/environments.
 
-![](./images/markdown/OnPrem_App_WxConfig.png)  ![](./images/markdown/wm.io.png) ![](./images/markdown/hybrid_devops_overview.png)
+![](./images/markdown/OnPrem_App_WxConfig.png)  ![](./images/markdown/wm_io.png) ![](./images/markdown/hybrid_devops_overview.png)
 
 # Assumptions / Scope / Prerequisite
 1. 4 Environments: Play/build, Dev, QA & Prod. 
@@ -23,39 +23,22 @@ By integrating repository workflows and azure pipelines, this process will autom
 7. Scaffolds/manifest.yaml file updated for assets
 
 
+
 # Git Workflow
 We will assume that the organization is following the below GIT Workflows.
 
 ![](./images/markdown/SingleFeature.png)    ![](./images/markdown/MultiFeature.png)
 
-# Steps
-1. **Initialize**
-   1. Developer starts by executing *Initialize Pipeline* (Automation)
-   2. This checks if the request is for an existing asset or a new implementation
-   3. If new, automation will 
-      1. Initialize a repository
-      2. Create standardized branches, including requested Feature Branch
-      3. Create a project in Play/Build environment
-   4. If existing, automation will
-      1. Clone the Prod branch to Feature branch
-      2. Import asset to Play/Build environment
 
-![](./images/markdown/Initialize.png)
+# Concept
 
-For hybrid integration use case, scaffolds/manifest.yaml file is read and based on that either of below steps is taken as a part of initialization process.
+1. Scaffolds/manifest.yaml file is created for each project and it looks like this.
 
-For WM.io Assets (say Type ='wm_io_inetgration')
-   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**API's Used** 
-   *  /projects/{{*projectName*}}, 
-   *  /projects/{{*projectName*}}/workflow-import, 
-   *  /projects/{{*projectName*}}/flow-import, 
-   *  /ut-flow/referencedata/{{*projectUID*}}/{{*referenceDataName*}}, 
-   *  /ut-flow/referencedata/create/{{*projectUID*}}, 
-   *  /ut-flow/referencedata/update/{{*projectUID*}}/{{*referenceDataName*}}, 
-   *  /projects/{{*projectName*}}/params/{{*parameterUID*}}, 
-   *  /projects/{{*projectName*}}/params
-<br> 
-<br> 
-<br> 
+![](./images/markdown/scaffolds.png)
 
-For On premise assets i.e. IS packages (say Type ='OnPrem')
+2. Based on the type, the pipelines are executed.
+
+3. for wm.io , follwo the same steps ( https://github.softwareag.com/PS/webmethods_io_int_cicd)
+
+4. for integration server , follow 
+
