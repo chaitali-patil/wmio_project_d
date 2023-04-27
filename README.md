@@ -11,7 +11,7 @@ This use-case will highlight a solution utilizing below
 3) for Webmethos IS (onpremise) - webMethods IS local service development and Azure DevOps to extract and store the code assets in repository (GitHub).
 By integrating repository workflows and azure pipelines, this process will automate the promotion of assets to different stages/environment as per the organizations promotion workflow. This will also showcase how to automate the test framework for respective stages/environments.
 
-![](./images/markdown/OnPrem_App_WxConfig.png)  
+![](./images/markdown/Onprem_is_devops.png)  
 ![](./images/markdown/wm_io.PNG) 
 ![](./images/markdown/hybrid_devops_overview.png)
 
