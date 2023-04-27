@@ -42,5 +42,5 @@ We will assume that the organization is following the below GIT Workflows.
 
 3. for wm.io , follwo the same steps ( https://github.softwareag.com/PS/webmethods_io_int_cicd)
 
-4. for integration server , follow 
+4. for integration server , we use Microsoft’s self-hosted agent on the build server where ABE and webMethods deployer are installed. Then we use ABE ANT targets and deployer to create and deploy IS packages from a git repository to the target Integration Server orchestrated by Azure DevOps. 
 
